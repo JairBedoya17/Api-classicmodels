@@ -7,7 +7,7 @@ var dbConn = require('./db');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/ingreso",
+app.get("/cantidad_compras",
     (req, res) => {
         dbConn.query('SELECT * FROM cliente_mayor_cantidad_compras_view', function(err, rows) {
             if (err) {
@@ -17,7 +17,7 @@ app.get("/ingreso",
             }
         })
     });
-app.get("/canciones",
+app.get("/ProductoAdquirido",
     (req, res) => {
         dbConn.query('SELECT * FROM producto_mas_vendido_view', function(err, rows) {
             if (err) {
